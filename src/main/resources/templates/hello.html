@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/mvc">
+<script src="/../static/jquery-1.7.2.min.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<button ></button>
+
+<a href="javascript:getList()">列表</a>
+</body>
+<script  th:inline = "javascript">
+
+window.onload = function(){
+    getList = function(){
+        alert("getin");
+        var url = "getListJson";
+        $.getJSON(url,function (result) {
+            var memberList = result.memberList;
+            console.log(memberList[1]);
+        })
+    }
+}
+
+
+</script>
+</html>
