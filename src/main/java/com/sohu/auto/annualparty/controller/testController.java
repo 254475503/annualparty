@@ -19,7 +19,7 @@ import java.util.Map;
 @Controller
 
 public class testController {
-    private final static String excelPath = "src/main/resources/participatores.xlsx";
+    private final static String excelPath = "src/main/resources/static/participatores.xlsx";
     @RequestMapping("sayHello")
     public String sayHello() {
         return "hello";
@@ -29,7 +29,6 @@ public class testController {
     @ResponseBody
     public List<String> getList()
     {
-        System.out.println("get in getList");
         List<String> participatores = new ArrayList<>();
         try {
             ReadExcel readExcel = new ReadExcel(excelPath);
@@ -48,13 +47,13 @@ public class testController {
        return participatores;
     }
 
-    @RequestMapping("getListJson")
+    @RequestMapping("getJsonList")
     @ResponseBody
     public String getListJson()
     {
 
         List<String> participatores = new ArrayList<>();
-        System.out.println("get in getListJson");
+
         try {
             ReadExcel readExcel = new ReadExcel(excelPath);
             int rownum = readExcel.getAllRowNumber();
