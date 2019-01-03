@@ -20,12 +20,8 @@ import java.util.Map;
 
 public class testController {
     private final static String excelPath = "src/main/resources/static/participatores.xlsx";
-    @RequestMapping("sayHello")
-    public String sayHello() {
-        return "hello";
-    }
 
-    @RequestMapping("getList")
+    @RequestMapping("getMemberList")
     @ResponseBody
     public List<String> getList()
     {
@@ -47,7 +43,7 @@ public class testController {
        return participatores;
     }
 
-    @RequestMapping("getJsonList")
+    @RequestMapping("getJsonMemberList")
     @ResponseBody
     public String getListJson()
     {
